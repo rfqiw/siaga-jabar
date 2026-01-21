@@ -1,4 +1,4 @@
-// Weather Data Fetching and Display
+// Weather Data Fetching and Display - Updated for 2026
 document.addEventListener('DOMContentLoaded', function() {
     const weatherSlider = document.getElementById('weatherSlider');
     const weatherDots = document.getElementById('weatherDots');
@@ -11,24 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let weatherData = [];
     let autoSlideInterval;
     
-    // Sample weather data (in real implementation, this would come from BMKG API)
-    // Since BMKG XML has CORS restrictions, we'll use simulated data based on actual BMKG structure
-    const sampleWeatherData = [
+    // Sample weather data for 2026
+    const sampleWeatherData2026 = [
         {
             location: "Bandung",
-            date: new Date().toISOString().split('T')[0],
-            condition: "Berawan",
-            temp: "24",
-            tempMin: "20",
-            tempMax: "28",
-            humidity: "78",
-            windSpeed: "10",
-            windDir: "Timur",
-            icon: "fa-cloud"
-        },
-        {
-            location: "Bogor",
-            date: new Date().toISOString().split('T')[0],
+            date: "2026-03-21",
             condition: "Hujan Ringan",
             temp: "23",
             tempMin: "21",
@@ -36,70 +23,81 @@ document.addEventListener('DOMContentLoaded', function() {
             humidity: "85",
             windSpeed: "12",
             windDir: "Barat Daya",
-            icon: "fa-cloud-rain"
+            icon: "fa-cloud-rain",
+            rainfall: "15 mm"
         },
         {
-            location: "Cirebon",
-            date: new Date().toISOString().split('T')[0],
-            condition: "Cerah Berawan",
-            temp: "30",
-            tempMin: "26",
-            tempMax: "32",
-            humidity: "65",
-            windSpeed: "15",
-            windDir: "Tenggara",
-            icon: "fa-cloud-sun"
-        },
-        {
-            location: "Tasikmalaya",
-            date: new Date().toISOString().split('T')[0],
-            condition: "Berawan",
-            temp: "25",
-            tempMin: "22",
-            tempMax: "28",
-            humidity: "80",
-            windSpeed: "8",
-            windDir: "Selatan",
-            icon: "fa-cloud"
-        },
-        {
-            location: "Sukabumi",
-            date: new Date().toISOString().split('T')[0],
+            location: "Bogor",
+            date: "2026-03-21",
             condition: "Hujan Sedang",
             temp: "22",
             tempMin: "20",
-            tempMax: "25",
+            tempMax: "24",
             humidity: "90",
-            windSpeed: "10",
+            windSpeed: "15",
             windDir: "Barat",
-            icon: "fa-cloud-showers-heavy"
+            icon: "fa-cloud-showers-heavy",
+            rainfall: "25 mm"
+        },
+        {
+            location: "Cirebon",
+            date: "2026-03-21",
+            condition: "Cerah Berawan",
+            temp: "29",
+            tempMin: "25",
+            tempMax: "32",
+            humidity: "65",
+            windSpeed: "18",
+            windDir: "Tenggara",
+            icon: "fa-cloud-sun",
+            rainfall: "5 mm"
+        },
+        {
+            location: "Tasikmalaya",
+            date: "2026-03-21",
+            condition: "Berawan",
+            temp: "24",
+            tempMin: "21",
+            tempMax: "27",
+            humidity: "82",
+            windSpeed: "10",
+            windDir: "Selatan",
+            icon: "fa-cloud",
+            rainfall: "10 mm"
+        },
+        {
+            location: "Sukabumi",
+            date: "2026-03-21",
+            condition: "Hujan Lebat",
+            temp: "21",
+            tempMin: "19",
+            tempMax: "23",
+            humidity: "92",
+            windSpeed: "20",
+            windDir: "Barat",
+            icon: "fa-poo-storm",
+            rainfall: "35 mm"
+        },
+        {
+            location: "Garut",
+            date: "2026-03-21",
+            condition: "Kabut",
+            temp: "20",
+            tempMin: "18",
+            tempMax: "23",
+            humidity: "88",
+            windSpeed: "8",
+            windDir: "Timur",
+            icon: "fa-smog",
+            rainfall: "8 mm"
         }
     ];
     
-    // Function to fetch real weather data from BMKG
+    // Function to fetch weather data
     async function fetchWeatherData() {
         try {
-            // In a real implementation, we would fetch from:
-            // https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml
-            
-            // However, due to CORS restrictions on BMKG's server,
-            // we would need a proxy server in production.
-            // For this static site, we'll use simulated data.
-            
-            // Uncomment the following code if using a CORS proxy:
-            /*
-            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            const targetUrl = 'https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml';
-            
-            const response = await fetch(proxyUrl + targetUrl);
-            const xmlText = await response.text();
-            
-            // Parse XML and extract weather data
-            weatherData = parseBMKGXML(xmlText);
-            */
-            
-            // For now, use sample data
-            weatherData = sampleWeatherData;
+            // Use sample data for 2026
+            weatherData = sampleWeatherData2026;
             
             // Initialize slider with weather data
             initWeatherSlider();
@@ -109,53 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error fetching weather data:', error);
             // Fallback to sample data
-            weatherData = sampleWeatherData;
+            weatherData = sampleWeatherData2026;
             initWeatherSlider();
             initSliderControls();
             startAutoSlide();
         }
-    }
-    
-    // Function to parse BMKG XML data (simplified)
-    function parseBMKGXML(xmlText) {
-        // This is a simplified parser for BMKG XML structure
-        // In production, you would need a proper XML parser
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-        
-        // Extract areas (kota) and their forecasts
-        const areas = xmlDoc.getElementsByTagName('area');
-        const parsedData = [];
-        
-        // Simplified extraction - adjust based on actual XML structure
-        for (let i = 0; i < Math.min(areas.length, 5); i++) {
-            const area = areas[i];
-            const name = area.getAttribute('description') || `Wilayah ${i+1}`;
-            
-            // Extract weather parameters (simplified)
-            const parameters = area.getElementsByTagName('parameter');
-            let temp = "25";
-            let humidity = "75";
-            let condition = "Berawan";
-            let icon = "fa-cloud";
-            
-            // In real implementation, parse actual parameter values
-            // This is just a placeholder
-            parsedData.push({
-                location: name,
-                date: new Date().toISOString().split('T')[0],
-                condition: condition,
-                temp: temp,
-                tempMin: (parseInt(temp) - 3).toString(),
-                tempMax: (parseInt(temp) + 3).toString(),
-                humidity: humidity,
-                windSpeed: "10",
-                windDir: "Timur",
-                icon: icon
-            });
-        }
-        
-        return parsedData;
     }
     
     // Initialize weather slider with data
@@ -166,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="weather-error">
                         <i class="fas fa-exclamation-triangle"></i>
                         <h3>Data cuaca tidak tersedia</h3>
-                        <p>Gagal memuat data cuaca dari BMKG. Silakan coba lagi nanti.</p>
+                        <p>Gagal memuat data cuaca dari BMKG 2026. Silakan coba lagi nanti.</p>
                     </div>
                 </div>
             `;
@@ -181,12 +137,21 @@ document.addEventListener('DOMContentLoaded', function() {
         weatherData.forEach((data, index) => {
             const slide = document.createElement('div');
             slide.className = 'weather-slide';
+            
+            const formattedDate = new Date(data.date).toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
             slide.innerHTML = `
                 <div class="weather-card">
                     <div class="weather-icon">
                         <i class="fas ${data.icon}"></i>
                         <h3 class="weather-location">${data.location}</h3>
-                        <p class="weather-date">${WebGISUtils.formatDate(data.date)}</p>
+                        <p class="weather-date">${formattedDate}</p>
+                        <div class="weather-year-badge">2026</div>
                     </div>
                     <div class="weather-details">
                         <div class="weather-detail">
@@ -206,6 +171,16 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h4>Angin</h4>
                             <p class="weather-value">${data.windSpeed} km/jam</p>
                             <small>Arah: ${data.windDir}</small>
+                        </div>
+                        <div class="weather-detail">
+                            <h4>Curah Hujan</h4>
+                            <p class="weather-value">${data.rainfall}</p>
+                            <small>24 jam terakhir</small>
+                        </div>
+                        <div class="weather-detail">
+                            <h4>Update Terakhir</h4>
+                            <p class="weather-value">BMKG 2026</p>
+                            <small>Sistem pemantauan terbaru</small>
                         </div>
                     </div>
                 </div>
@@ -276,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         autoSlideInterval = setInterval(() => {
             changeSlide(1);
-        }, 5000); // Change slide every 5 seconds
+        }, 5000);
     }
     
     function pauseAutoSlide() {
@@ -294,9 +269,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize weather display
     fetchWeatherData();
     
-    // Add CSS for error state
+    // Add CSS for weather year badge
     const style = document.createElement('style');
     style.textContent = `
+        .weather-year-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        
         .weather-error {
             text-align: center;
             padding: 60px 0;
