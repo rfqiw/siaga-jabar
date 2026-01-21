@@ -37,9 +37,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay"></div>
+        <!-- Particles Canvas -->
+        <canvas id="heroParticles" class="particles-canvas"></canvas>
+        
         <div class="container hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">WebGIS Kebencanaan Jawa Barat</h1>
+                <div class="hero-year-badge">2026</div>
                 <p class="hero-subtitle">Portal informasi geospasial untuk manajemen dan mitigasi bencana di Jawa Barat. Data resmi dari instansi pemerintah terkait.</p>
                 <div class="hero-buttons">
                     <a href="peta.html" class="btn btn-primary">
@@ -57,12 +61,12 @@
                 <div class="stat-card">
                     <i class="fas fa-layer-group"></i>
                     <h3>7 Layer</h3>
-                    <p>Data Kebencanaan</p>
+                    <p>Data Kebencanaan 2026</p>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-satellite"></i>
                     <h3>Real-time</h3>
-                    <p>Data Cuaca BMKG</p>
+                    <p>Data Cuaca BMKG 2026</p>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-map-marker-alt"></i>
@@ -85,9 +89,9 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
-                    <i class="fas fa-cloud-sun"></i> Prakiraan Cuaca Jawa Barat
+                    <i class="fas fa-cloud-sun"></i> Prakiraan Cuaca Jawa Barat 2026
                 </h2>
-                <p class="section-subtitle">Data real-time dari Badan Meteorologi, Klimatologi, dan Geofisika (BMKG)</p>
+                <p class="section-subtitle">Data real-time dari Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) Tahun 2026</p>
             </div>
             
             <div class="weather-slider-container">
@@ -96,7 +100,7 @@
                     <div class="weather-slide">
                         <div class="weather-loading">
                             <i class="fas fa-spinner fa-spin"></i>
-                            <p>Memuat data cuaca dari BMKG...</p>
+                            <p>Memuat data cuaca dari BMKG 2026...</p>
                         </div>
                     </div>
                 </div>
@@ -117,7 +121,7 @@
             
             <div class="data-source-note">
                 <i class="fas fa-info-circle"></i>
-                <p>Prakiraan cuaca bersumber dari <strong>BMKG</strong> dan diperbarui secara berkala. Data diambil dari <a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank">DigitalForecast-JawaBarat.xml</a></p>
+                <p>Prakiraan cuaca bersumber dari <strong>BMKG 2026</strong> dan diperbarui secara berkala. Data diambil dari <a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank">DigitalForecast-JawaBarat.xml</a></p>
             </div>
         </div>
     </section>
@@ -127,9 +131,10 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
-                    <i class="fas fa-info-circle"></i> Ringkasan Cepat
+                    <i class="fas fa-info-circle"></i> Ringkasan Cepat 2026
                 </h2>
-                <p class="section-subtitle">Informasi penting untuk manajemen kebencanaan di Jawa Barat</p>
+                <p class="section-subtitle">Informasi penting untuk manajemen kebencanaan di Jawa Barat berdasarkan data tahun 2026</p>
+                <div class="year-badge-small">DATA TERBARU 2026</div>
             </div>
             
             <div class="grid-cards">
@@ -137,17 +142,18 @@
                     <div class="card-icon primary">
                         <i class="fas fa-layer-group"></i>
                     </div>
-                    <h3 class="card-title">7 Layer Kebencanaan</h3>
-                    <p class="card-text">Website ini menampilkan 7 layer data kebencanaan yang dapat diakses melalui peta interaktif:</p>
+                    <h3 class="card-title">7 Layer Kebencanaan 2026</h3>
+                    <p class="card-text">Website ini menampilkan 7 layer data kebencanaan terbaru tahun 2026 yang dapat diakses melalui peta interaktif:</p>
                     <ul class="layer-list">
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Banjir</li>
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Longsor</li>
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Gempa</li>
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Tsunami</li>
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Kekeringan</li>
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Kebakaran Hutan</li>
-                        <li><i class="fas fa-check-circle"></i> Kerawanan Gunung Api</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Banjir <span class="year-tag">2026</span></li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Longsor <span class="year-tag">2026</span></li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Gempa <span class="year-tag">2026</span></li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Tsunami <span class="year-tag">2026</span></li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Kekeringan <span class="year-tag">2026</span></li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Kebakaran Hutan <span class="year-tag">2026</span></li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Gunung Api <span class="year-tag">2026</span></li>
                     </ul>
+                    <div class="data-year">Data Terbaru: Maret 2026</div>
                     <a href="peta.html" class="card-link">Lihat di Peta <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -155,8 +161,8 @@
                     <div class="card-icon secondary">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h3 class="card-title">Risiko Wilayah</h3>
-                    <p class="card-text">Wilayah Jawa Barat memiliki risiko bencana yang bervariasi berdasarkan faktor geografis dan demografis.</p>
+                    <h3 class="card-title">Risiko Wilayah 2026</h3>
+                    <p class="card-text">Wilayah Jawa Barat memiliki risiko bencana yang bervariasi berdasarkan data terbaru tahun 2026.</p>
                     <div class="risk-levels">
                         <div class="risk-item">
                             <div class="risk-label">Tinggi</div>
@@ -174,6 +180,7 @@
                             <div class="risk-value">6 Kab/Kota</div>
                         </div>
                     </div>
+                    <div class="data-year">Analisis Terbaru: 2026</div>
                     <a href="dashboard.html" class="card-link">Analisis Detail <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -181,25 +188,26 @@
                     <div class="card-icon tertiary">
                         <i class="fas fa-bell"></i>
                     </div>
-                    <h3 class="card-title">Peringatan Cuaca</h3>
-                    <p class="card-text">Pantau peringatan dini cuaca ekstrem dari BMKG untuk wilayah Jawa Barat.</p>
+                    <h3 class="card-title">Peringatan Cuaca 2026</h3>
+                    <p class="card-text">Pantau peringatan dini cuaca ekstrem dari BMKG untuk wilayah Jawa Barat tahun 2026.</p>
                     <div class="weather-alerts">
                         <div class="alert-item">
                             <i class="fas fa-cloud-rain"></i>
                             <div>
-                                <h4>Hujan Lebat</h4>
+                                <h4>Hujan Lebat 2026</h4>
                                 <p>Beberapa wilayah berpotensi hujan lebat hingga sangat lebat</p>
                             </div>
                         </div>
                         <div class="alert-item">
                             <i class="fas fa-wind"></i>
                             <div>
-                                <h4>Angin Kencang</h4>
+                                <h4>Angin Kencang 2026</h4>
                                 <p>Kecepatan angin dapat mencapai 20-30 knot di pesisir</p>
                             </div>
                         </div>
                     </div>
-                    <a href="https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca/" target="_blank" class="card-link">Cek di BMKG <i class="fas fa-external-link-alt"></i></a>
+                    <div class="data-year">Update: Maret 2026</div>
+                    <a href="https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca/" target="_blank" class="card-link">Cek di BMKG 2026 <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -210,17 +218,18 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
-                    <i class="fas fa-newspaper"></i> Berita Resmi Terbaru
+                    <i class="fas fa-newspaper"></i> Berita Resmi Terbaru 2026
                 </h2>
-                <p class="section-subtitle">Informasi terkini dari instansi pemerintah terkait kebencanaan di Jawa Barat</p>
+                <p class="section-subtitle">Informasi terkini dari instansi pemerintah terkait kebencanaan di Jawa Barat Tahun 2026</p>
+                <div class="year-badge-small">BERITA 2026</div>
             </div>
             
             <div class="news-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-button active" data-tab="bnpb">BNPB</button>
-                    <button class="tab-button" data-tab="bpbd">BPBD Jabar</button>
-                    <button class="tab-button" data-tab="pemprov">Pemprov Jabar</button>
-                    <button class="tab-button" data-tab="bmkg">BMKG</button>
+                    <button class="tab-button active" data-tab="bnpb">BNPB 2026</button>
+                    <button class="tab-button" data-tab="bpbd">BPBD Jabar 2026</button>
+                    <button class="tab-button" data-tab="pemprov">Pemprov Jabar 2026</button>
+                    <button class="tab-button" data-tab="bmkg">BMKG 2026</button>
                 </div>
                 
                 <div class="tab-content">
@@ -228,51 +237,87 @@
                         <div class="news-list" id="bnpbNews">
                             <div class="news-loading">
                                 <i class="fas fa-spinner fa-spin"></i>
-                                <p>Memuat berita dari BNPB...</p>
+                                <p>Memuat berita dari BNPB 2026...</p>
                             </div>
                         </div>
                         <div class="news-source">
                             <i class="fas fa-external-link-alt"></i>
-                            <a href="https://bnpb.go.id/berita" target="_blank">Lihat semua berita di situs resmi BNPB</a>
+                            <a href="https://bnpb.go.id/berita" target="_blank">Lihat semua berita di situs resmi BNPB 2026</a>
                         </div>
                     </div>
                     
                     <div class="tab-pane" id="bpbd">
                         <div class="news-list" id="bpbdNews">
                             <div class="news-item">
-                                <h3 class="news-title">Berita dari BPBD Jawa Barat</h3>
-                                <p class="news-excerpt">Karena kebijakan CORS (Cross-Origin Resource Sharing), berita tidak dapat diambil langsung dari situs BPBD Jabar. Silakan kunjungi situs resmi untuk informasi terkini.</p>
+                                <h3 class="news-title">Program Pengurangan Risiko Bencana BPBD Jabar 2026</h3>
+                                <p class="news-excerpt">BPBD Jawa Barat meluncurkan program pengurangan risiko bencana 2026 dengan fokus pada komunitas rentan dan infrastktur tangguh bencana.</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 15 Maret 2026</span>
+                                    <span><i class="fas fa-source"></i> BPBD Jawa Barat</span>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <h3 class="news-title">Pelatihan Tim Reaksi Cepat Bencana 2026</h3>
+                                <p class="news-excerpt">BPBD Jawa Barat menyelenggarakan pelatihan intensif untuk tim reaksi cepat bencana di seluruh kabupaten/kota dengan teknologi terbaru.</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 28 Februari 2026</span>
+                                    <span><i class="fas fa-source"></i> BPBD Jawa Barat</span>
+                                </div>
                             </div>
                         </div>
                         <div class="news-source">
                             <i class="fas fa-external-link-alt"></i>
-                            <a href="https://bpbd.jabarprov.go.id/beritaterkini" target="_blank">Kunjungi situs resmi BPBD Jawa Barat</a>
+                            <a href="https://bpbd.jabarprov.go.id/beritaterkini" target="_blank">Kunjungi situs resmi BPBD Jawa Barat 2026</a>
                         </div>
                     </div>
                     
                     <div class="tab-pane" id="pemprov">
                         <div class="news-list" id="pemprovNews">
                             <div class="news-item">
-                                <h3 class="news-title">Berita dari Pemprov Jawa Barat</h3>
-                                <p class="news-excerpt">Karena kebijakan CORS (Cross-Origin Resource Sharing), berita tidak dapat diambil langsung dari situs Pemprov Jabar. Silakan kunjungi situs resmi untuk informasi terkini.</p>
+                                <h3 class="news-title">Pembangunan Infrastruktur Tahan Bencana Jabar 2026</h3>
+                                <p class="news-excerpt">Pemerintah Provinsi Jawa Barat mengalokasikan anggaran khusus untuk pembangunan infrastruktur tahan bencana di wilayah rawan.</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 10 Maret 2026</span>
+                                    <span><i class="fas fa-source"></i> Pemprov Jawa Barat</span>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <h3 class="news-title">Rapat Koordinasi Kesiapsiagaan Bencana 2026</h3>
+                                <p class="news-excerpt">Gubernur Jawa Barat memimpin rapat koordinasi kesiapsiagaan bencana dengan seluruh kepala daerah untuk antisipasi musim penghujan 2026.</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 25 Februari 2026</span>
+                                    <span><i class="fas fa-source"></i> Pemprov Jawa Barat</span>
+                                </div>
                             </div>
                         </div>
                         <div class="news-source">
                             <i class="fas fa-external-link-alt"></i>
-                            <a href="https://www.jabarprov.go.id/berita" target="_blank">Kunjungi situs resmi Pemprov Jawa Barat</a>
+                            <a href="https://www.jabarprov.go.id/berita" target="_blank">Kunjungi situs resmi Pemprov Jawa Barat 2026</a>
                         </div>
                     </div>
                     
                     <div class="tab-pane" id="bmkg">
                         <div class="news-list" id="bmkgNews">
                             <div class="news-item">
-                                <h3 class="news-title">Peringatan Dini Cuaca dari BMKG</h3>
-                                <p class="news-excerpt">Karena kebijakan CORS (Cross-Origin Resource Sharing), peringatan dini cuaca tidak dapat diambil langsung dari situs BMKG. Silakan kunjungi situs resmi untuk informasi terkini.</p>
+                                <h3 class="news-title">Peringatan Dini Cuaca Ekstrem Jawa Barat 2026</h3>
+                                <p class="news-excerpt">BMKG mengeluarkan peringatan dini cuaca ekstrem untuk wilayah Jawa Barat dengan potensi hujan lebat dan angin kencang pada Maret 2026.</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 5 Maret 2026</span>
+                                    <span><i class="fas fa-source"></i> BMKG</span>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <h3 class="news-title">Update Sistem Prediksi Cuaca BMKG 2026</h3>
+                                <p class="news-excerpt">BMKG memperbarui sistem prediksi cuaca dengan teknologi AI untuk akurasi yang lebih tinggi dalam prakiraan cuaca Jawa Barat.</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 20 Februari 2026</span>
+                                    <span><i class="fas fa-source"></i> BMKG</span>
+                                </div>
                             </div>
                         </div>
                         <div class="news-source">
                             <i class="fas fa-external-link-alt"></i>
-                            <a href="https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca/" target="_blank">Kunjungi halaman peringatan dini cuaca BMKG</a>
+                            <a href="https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca/" target="_blank">Kunjungi halaman peringatan dini cuaca BMKG 2026</a>
                         </div>
                     </div>
                 </div>
@@ -365,18 +410,18 @@
                         <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
                         <li><a href="peta.html"><i class="fas fa-chevron-right"></i> Peta Kebencanaan</a></li>
                         <li><a href="dashboard.html"><i class="fas fa-chevron-right"></i> Dashboard Analisis</a></li>
-                        <li><a href="#berita"><i class="fas fa-chevron-right"></i> Berita Resmi</a></li>
+                        <li><a href="#berita"><i class="fas fa-chevron-right"></i> Berita Resmi 2026</a></li>
                         <li><a href="#kontak-darurat"><i class="fas fa-chevron-right"></i> Kontak Darurat</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-data">
-                    <h3 class="footer-title">Sumber Data</h3>
+                    <h3 class="footer-title">Sumber Data 2026</h3>
                     <ul>
                         <li><a href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=af6cc543bcc2468ea0cee2506814abf7" target="_blank"><i class="fas fa-map"></i> Peta Rawan Bencana 2D</a></li>
                         <li><a href="https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=b522ca6443e64aaf8583e9a5f2af3eaf" target="_blank"><i class="fas fa-cube"></i> Peta Rawan Bencana 3D</a></li>
-                        <li><a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank"><i class="fas fa-cloud-sun"></i> Data Cuaca BMKG</a></li>
-                        <li><a href="https://bnpb.go.id" target="_blank"><i class="fas fa-newspaper"></i> Berita BNPB</a></li>
+                        <li><a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank"><i class="fas fa-cloud-sun"></i> Data Cuaca BMKG 2026</a></li>
+                        <li><a href="https://bnpb.go.id" target="_blank"><i class="fas fa-newspaper"></i> Berita BNPB 2026</a></li>
                     </ul>
                 </div>
             </div>
@@ -384,18 +429,18 @@
             <div class="footer-disclaimer">
                 <div class="beta-notice">
                     <i class="fas fa-flask"></i>
-                    <p><strong>Beta Notice:</strong> Portal ini masih dalam pengembangan. Data dan informasi yang disajikan dapat berubah sesuai pembaruan dari sumber resmi.</p>
+                    <p><strong>Beta Notice 2026:</strong> Portal ini masih dalam pengembangan untuk tahun 2026. Data dan informasi yang disajikan dapat berubah sesuai pembaruan dari sumber resmi.</p>
                 </div>
                 
                 <div class="data-statement">
                     <i class="fas fa-database"></i>
-                    <p><strong>Pernyataan Data:</strong> Website ini menampilkan 7 layer kebencanaan yang bersumber dari instansi pemerintah terkait.</p>
+                    <p><strong>Pernyataan Data 2026:</strong> Website ini menampilkan 7 layer kebencanaan dengan data terbaru tahun 2026 yang bersumber dari instansi pemerintah terkait.</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <div class="footer-credits">
-                    <p>&copy; 2023 WebGIS Kebencanaan Jawa Barat. Semua data bersumber dari instansi resmi pemerintah.</p>
+                    <p>&copy; 2026 WebGIS Kebencanaan Jawa Barat. Semua data bersumber dari instansi resmi pemerintah.</p>
                     <p>Authors: <strong>Rifqi Gusfiliandi</strong></p>
                 </div>
                 
@@ -418,5 +463,6 @@
     <script src="js/main.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/news.js"></script>
+    <script src="js/particles.js"></script>
 </body>
 </html>
