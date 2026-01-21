@@ -1841,5 +1841,170 @@ img {
     
     .footer-disclaimer {
         grid-template-columns: 1fr;
+
+    /* ================================================
+   PARTICLE BACKGROUND & 2026 UPDATES
+   ================================================ */
+
+/* Particles Background */
+.particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero .particles-canvas {
+    pointer-events: auto; /* Allow mouse interaction in hero */
+}
+
+/* Adjust z-index for hero content */
+.hero-overlay {
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Year Badge */
+.year-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+    color: var(--primary-dark);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Hero Year Badge */
+.hero-year-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+    color: var(--primary-dark);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+    }
+}
+
+/* Year Tag */
+.year-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+    color: var(--primary-dark);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.year-badge-small {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+    color: var(--primary-dark);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.data-year {
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 15px 0;
+    text-align: center;
+    border-top: 1px solid var(--card-border);
+    padding-top: 15px;
+}
+
+/* Year Indicator */
+.year-indicator {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+    color: var(--primary-dark);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+    float: right;
+}
+
+.year-small {
+    font-size: 0.7em;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.weather-year-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-light-blue));
+    color: var(--primary-dark);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+    .particles-canvas {
+        display: none;
+    }
+    
+    .hero-year-badge {
+        animation: none;
+    }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .particles-canvas {
+        opacity: 0.5;
+    }
+    
+    .hero-year-badge {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+    
+    .year-badge {
+        padding: 6px 15px;
+        font-size: 0.9rem;
     }
 }
