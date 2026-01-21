@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Analisis - WebGIS Jawa Barat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>WebGIS<span class="logo-highlight">Kebencanaan</span>Jabar</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="peta.html" class="nav-link"><i class="fas fa-map"></i> Peta</a></li>
+                <li><a href="dashboard.html" class="nav-link active"><i class="fas fa-chart-bar"></i> Dashboard</a></li>
+                <li><a href="index.html#berita" class="nav-link"><i class="fas fa-newspaper"></i> Berita</a></li>
+                <li><a href="index.html#kontak-darurat" class="nav-link"><i class="fas fa-phone-alt"></i> Darurat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fas fa-chart-bar"></i> Dashboard Analisis
+            </h1>
+            <p class="page-subtitle">Analisis data kebencanaan berdasarkan interpretasi 7 layer pada peta interaktif</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="section dashboard-section">
+        <div class="container">
+            <div class="dashboard-intro">
+                <div class="intro-card">
+                    <i class="fas fa-info-circle"></i>
+                    <div>
+                        <h3>Tentang Dashboard</h3>
+                        <p>Dashboard ini menyajikan analisis berbasis interpretasi visual dari 7 layer kebencanaan yang tersedia di peta interaktif. Data bersumber dari instansi pemerintah terkait dan divisualisasikan dalam format yang mudah dipahami.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Layer Analysis -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-layer-group"></i> Analisis 7 Layer Kebencanaan
+                </h2>
+                <p class="section-subtitle">Interpretasi visual berdasarkan data yang tersedia di peta interaktif</p>
+            </div>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon flood">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="analysis-title">Banjir</h3>
+                    <p class="analysis-desc">Wilayah dengan kerentanan tinggi terhadap banjir berdasarkan data historis dan topografi.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Wilayah Risiko Tinggi:</span>
+                            <span class="data-value">8 Kab/Kota</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Musim Puncak:</span>
+                            <span class="data-value">Nov - Feb</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill flood" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon landslide">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="analysis-title">Longsor</h3>
+                    <p class="analysis-desc">Daerah dengan kemiringan lereng tinggi dan kondisi tanah rentan terhadap pergerakan tanah.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Wilayah Risiko Tinggi:</span>
+                            <span class="data-value">6 Kab/Kota</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Faktor Utama:</span>
+                            <span class="data-value">Lereng & Curah Hujan</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill landslide" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon earthquake">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3 class="analysis-title">Gempa Bumi</h3>
+                    <p class="analysis-desc">Wilayah berdasarkan zona seismik dan sejarah aktivitas gempa di Jawa Barat.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Zona Aktif:</span>
+                            <span class="data-value">Selatan & Barat</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Kedalaman:</span>
+                            <span class="data-value">10-100 km</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill earthquake" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon tsunami">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3 class="analysis-title">Tsunami</h3>
+                    <p class="analysis-desc">Wilayah pesisir dengan risiko tsunami berdasarkan elevasi dan jarak dari pantai.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Zona Bahaya:</span>
+                            <span class="data-value">Pesisir Selatan</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Jarak Aman:</span>
+                            <span class="data-value">> 2 km dari pantai</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill tsunami" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon drought">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="analysis-title">Kekeringan</h3>
+                    <p class="analysis-desc">Daerah dengan curah hujan rendah dan ketahanan air terbatas selama musim kemarau.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Wilayah Terdampak:</span>
+                            <span class="data-value">5 Kab/Kota</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Musim Puncak:</span>
+                            <span class="data-value">Jun - Sep</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>55%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill drought" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon fire">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="analysis-title">Kebakaran Hutan</h3>
+                    <p class="analysis-desc">Kawasan hutan dengan risiko kebakaran berdasarkan vegetasi dan kondisi iklim.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Area Rentan:</span>
+                            <span class="data-value">3 Kab/Kota</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Faktor Utama:</span>
+                            <span class="data-value">Vegetasi Kering</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>35%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill fire" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon volcano">
+                        <i class="fas fa-volcano"></i>
+                    </div>
+                    <h3 class="analysis-title">Gunung Api</h3>
+                    <p class="analysis-desc">Wilayah sekitar gunung api aktif dengan risiko erupsi dan lahar.</p>
+                    
+                    <div class="analysis-data">
+                        <div class="data-item">
+                            <span class="data-label">Gunung Api Aktif:</span>
+                            <span class="data-value">3 Gunung</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Zona Bahaya:</span>
+                            <span class="data-value">Radius 10 km</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Tingkat Kerentanan</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill volcano" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Risk Summary Table -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-table"></i> Ringkasan Risiko per Kabupaten/Kota
+                </h2>
+                <p class="section-subtitle">Interpretasi berdasarkan tampilan visual dari peta interaktif</p>
+            </div>
+            
+            <div class="table-container">
+                <table class="risk-table">
+                    <thead>
+                        <tr>
+                            <th>Kabupaten/Kota</th>
+                            <th>Risiko Banjir</th>
+                            <th>Risiko Longsor</th>
+                            <th>Risiko Gempa</th>
+                            <th>Risiko Total</th>
+                            <th>Kategori</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bandung</td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill flood" style="width: 75%"></div></div></td>
+                            <td><span class="risk-badge high">Tinggi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bogor</td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator low">Rendah</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill landslide" style="width: 70%"></div></div></td>
+                            <td><span class="risk-badge high">Tinggi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cianjur</td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill earthquake" style="width: 80%"></div></div></td>
+                            <td><span class="risk-badge high">Tinggi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sukabumi</td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill landslide" style="width: 65%"></div></div></td>
+                            <td><span class="risk-badge medium">Sedang</span></td>
+                        </tr>
+                        <tr>
+                            <td>Garut</td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill earthquake" style="width: 60%"></div></div></td>
+                            <td><span class="risk-badge medium">Sedang</span></td>
+                        </tr>
+                        <tr>
+                            <td>Tasikmalaya</td>
+                            <td><div class="risk-indicator low">Rendah</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill medium" style="width: 50%"></div></div></td>
+                            <td><span class="risk-badge medium">Sedang</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ciamis</td>
+                            <td><div class="risk-indicator low">Rendah</div></td>
+                            <td><div class="risk-indicator medium">Sedang</div></td>
+                            <td><div class="risk-indicator low">Rendah</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill low" style="width: 40%"></div></div></td>
+                            <td><span class="risk-badge low">Rendah</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kota Bandung</td>
+                            <td><div class="risk-indicator high">Tinggi</div></td>
+                            <td><div class="risk-indicator low">Rendah</div></td>
+                            <td><div class="risk-indicator low">Rendah</div></td>
+                            <td><div class="progress-bar small"><div class="progress-fill flood" style="width: 55%"></div></div></td>
+                            <td><span class="risk-badge medium">Sedang</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-note">
+                <i class="fas fa-info-circle"></i>
+                <p>Data pada tabel di atas merupakan interpretasi visual dari peta interaktif dan bukan data kuantitatif resmi. Untuk data akurat, silakan merujuk ke instansi pemerintah terkait.</p>
+            </div>
+            
+            <!-- Methodology Panel -->
+            <div class="methodology-panel">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-clipboard-check"></i> Metodologi & Batasan
+                    </h2>
+                </div>
+                
+                <div class="methodology-content">
+                    <div class="methodology-card">
+                        <h3><i class="fas fa-method"></i> Metodologi Analisis</h3>
+                        <p>Analisis ini dilakukan dengan interpretasi visual dari 7 layer kebencanaan yang tersedia di peta interaktif. Proses meliputi:</p>
+                        <ul>
+                            <li>Identifikasi visual wilayah dengan warna berbeda untuk setiap tingkat risiko</li>
+                            <li>Interpretasi luas relatif wilayah berisiko untuk setiap kabupaten/kota</li>
+                            <li>Kategorisasi risiko berdasarkan intensitas warna dan luas area</li>
+                            <li>Perbandingan visual antar wilayah untuk menentukan skala relatif</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="methodology-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Batasan & Peringatan</h3>
+                        <p>Analisis ini memiliki beberapa batasan penting:</p>
+                        <ul>
+                            <li>Data bersifat interpretasi visual, bukan data kuantitatif resmi</li>
+                            <li>Tingkat akurasi bergantung pada resolusi dan kejelasan peta sumber</li>
+                            <li>Perubahan data pada peta sumber tidak otomatis terupdate di dashboard</li>
+                            <li>Tidak menggantikan analisis resmi dari instansi pemerintah terkait</li>
+                        </ul>
+                        <p class="warning-note"><i class="fas fa-exclamation-circle"></i> <strong>Penting:</strong> Gunakan informasi ini sebagai referensi awal saja. Untuk keputusan penting, selalu konsultasikan dengan data resmi dari BNPB, BMKG, dan instansi terkait lainnya.</p>
+                    </div>
+                </div>
+                
+                <div class="data-recommendation">
+                    <i class="fas fa-database"></i>
+                    <div>
+                        <h3>Rekomendasi Sumber Data Resmi</h3>
+                        <p>Untuk data kebencanaan yang akurat dan terpercaya, silakan mengunjungi:</p>
+                        <div class="recommendation-links">
+                            <a href="https://bnpb.go.id" target="_blank" class="btn btn-outline small">
+                                <i class="fas fa-external-link-alt"></i> Situs Resmi BNPB
+                            </a>
+                            <a href="https://www.bmkg.go.id" target="_blank" class="btn btn-outline small">
+                                <i class="fas fa-external-link-alt"></i> Situs Resmi BMKG
+                            </a>
+                            <a href="https://bpbd.jabarprov.go.id" target="_blank" class="btn btn-outline small">
+                                <i class="fas fa-external-link-alt"></i> BPBD Jawa Barat
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact (Mini) -->
+    <section class="section emergency-mini">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-phone-alt"></i> Kontak Darurat
+                </h2>
+            </div>
+            
+            <div class="emergency-numbers">
+                <div class="emergency-number">
+                    <span class="number">112</span>
+                    <span class="label">Darurat Nasional</span>
+                </div>
+                <div class="emergency-number">
+                    <span class="number">129</span>
+                    <span class="label">BNPB</span>
+                </div>
+                <div class="emergency-number">
+                    <span class="number">119</span>
+                    <span class="label">Kesehatan</span>
+                </div>
+                <div class="emergency-number">
+                    <span class="number">115</span>
+                    <span class="label">Basarnas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>WebGIS<span class="logo-highlight">Kebencanaan</span>Jabar</span>
+                    </a>
+                    <p class="footer-description">Portal informasi geospasial untuk manajemen dan mitigasi bencana di Jawa Barat.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Navigasi</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="peta.html"><i class="fas fa-chevron-right"></i> Peta Kebencanaan</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-chevron-right"></i> Dashboard Analisis</a></li>
+                        <li><a href="index.html#berita"><i class="fas fa-chevron-right"></i> Berita Resmi</a></li>
+                        <li><a href="index.html#kontak-darurat"><i class="fas fa-chevron-right"></i> Kontak Darurat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-data">
+                    <h3 class="footer-title">Sumber Data</h3>
+                    <ul>
+                        <li><a href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=af6cc543bcc2468ea0cee2506814abf7" target="_blank"><i class="fas fa-map"></i> Peta Rawan Bencana 2D</a></li>
+                        <li><a href="https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=b522ca6443e64aaf8583e9a5f2af3eaf" target="_blank"><i class="fas fa-cube"></i> Peta Rawan Bencana 3D</a></li>
+                        <li><a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank"><i class="fas fa-cloud-sun"></i> Data Cuaca BMKG</a></li>
+                        <li><a href="https://bnpb.go.id" target="_blank"><i class="fas fa-newspaper"></i> Berita BNPB</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <div class="beta-notice">
+                    <i class="fas fa-flask"></i>
+                    <p><strong>Analisis Visual:</strong> Dashboard ini menampilkan interpretasi visual dari peta interaktif, bukan data kuantitatif resmi.</p>
+                </div>
+                
+                <div class="data-statement">
+                    <i class="fas fa-database"></i>
+                    <p><strong>Pernyataan Data:</strong> Website ini menampilkan 7 layer kebencanaan yang bersumber dari instansi pemerintah terkait.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>&copy; 2023 WebGIS Kebencanaan Jawa Barat. Semua data bersumber dari instansi resmi pemerintah.</p>
+                    <p>Authors: <strong>Rifqi Gusfiliandi</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
