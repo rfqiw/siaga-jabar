@@ -1,1 +1,422 @@
-hello world
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Kebencanaan Jawa Barat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>WebGIS<span class="logo-highlight">Kebencanaan</span>Jabar</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="peta.html" class="nav-link"><i class="fas fa-map"></i> Peta</a></li>
+                <li><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-bar"></i> Dashboard</a></li>
+                <li><a href="#berita" class="nav-link"><i class="fas fa-newspaper"></i> Berita</a></li>
+                <li><a href="#kontak-darurat" class="nav-link"><i class="fas fa-phone-alt"></i> Darurat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">WebGIS Kebencanaan Jawa Barat</h1>
+                <p class="hero-subtitle">Portal informasi geospasial untuk manajemen dan mitigasi bencana di Jawa Barat. Data resmi dari instansi pemerintah terkait.</p>
+                <div class="hero-buttons">
+                    <a href="peta.html" class="btn btn-primary">
+                        <i class="fas fa-map"></i> Lihat Peta
+                    </a>
+                    <a href="dashboard.html" class="btn btn-secondary">
+                        <i class="fas fa-chart-bar"></i> Dashboard
+                    </a>
+                    <a href="#berita" class="btn btn-outline">
+                        <i class="fas fa-newspaper"></i> Berita Terkini
+                    </a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>7 Layer</h3>
+                    <p>Data Kebencanaan</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-satellite"></i>
+                    <h3>Real-time</h3>
+                    <p>Data Cuaca BMKG</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>27 Kab/Kota</h3>
+                    <p>Wilayah Jabar</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Cuaca Section -->
+    <section class="section weather-section" id="cuaca">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-cloud-sun"></i> Prakiraan Cuaca Jawa Barat
+                </h2>
+                <p class="section-subtitle">Data real-time dari Badan Meteorologi, Klimatologi, dan Geofisika (BMKG)</p>
+            </div>
+            
+            <div class="weather-slider-container">
+                <div class="weather-slider" id="weatherSlider">
+                    <!-- Data cuaca akan diisi oleh JavaScript -->
+                    <div class="weather-slide">
+                        <div class="weather-loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Memuat data cuaca dari BMKG...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn prev" id="prevWeather">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next" id="nextWeather">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="slider-dots" id="weatherDots">
+                    <!-- Dots akan di-generate oleh JavaScript -->
+                </div>
+            </div>
+            
+            <div class="data-source-note">
+                <i class="fas fa-info-circle"></i>
+                <p>Prakiraan cuaca bersumber dari <strong>BMKG</strong> dan diperbarui secara berkala. Data diambil dari <a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank">DigitalForecast-JawaBarat.xml</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ringkasan Cepat -->
+    <section class="section quick-summary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i> Ringkasan Cepat
+                </h2>
+                <p class="section-subtitle">Informasi penting untuk manajemen kebencanaan di Jawa Barat</p>
+            </div>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-icon primary">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="card-title">7 Layer Kebencanaan</h3>
+                    <p class="card-text">Website ini menampilkan 7 layer data kebencanaan yang dapat diakses melalui peta interaktif:</p>
+                    <ul class="layer-list">
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Banjir</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Longsor</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Gempa</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Tsunami</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Kekeringan</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Kebakaran Hutan</li>
+                        <li><i class="fas fa-check-circle"></i> Kerawanan Gunung Api</li>
+                    </ul>
+                    <a href="peta.html" class="card-link">Lihat di Peta <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon secondary">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="card-title">Risiko Wilayah</h3>
+                    <p class="card-text">Wilayah Jawa Barat memiliki risiko bencana yang bervariasi berdasarkan faktor geografis dan demografis.</p>
+                    <div class="risk-levels">
+                        <div class="risk-item">
+                            <div class="risk-label">Tinggi</div>
+                            <div class="risk-bar high"></div>
+                            <div class="risk-value">12 Kab/Kota</div>
+                        </div>
+                        <div class="risk-item">
+                            <div class="risk-label">Sedang</div>
+                            <div class="risk-bar medium"></div>
+                            <div class="risk-value">9 Kab/Kota</div>
+                        </div>
+                        <div class="risk-item">
+                            <div class="risk-label">Rendah</div>
+                            <div class="risk-bar low"></div>
+                            <div class="risk-value">6 Kab/Kota</div>
+                        </div>
+                    </div>
+                    <a href="dashboard.html" class="card-link">Analisis Detail <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon tertiary">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="card-title">Peringatan Cuaca</h3>
+                    <p class="card-text">Pantau peringatan dini cuaca ekstrem dari BMKG untuk wilayah Jawa Barat.</p>
+                    <div class="weather-alerts">
+                        <div class="alert-item">
+                            <i class="fas fa-cloud-rain"></i>
+                            <div>
+                                <h4>Hujan Lebat</h4>
+                                <p>Beberapa wilayah berpotensi hujan lebat hingga sangat lebat</p>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <h4>Angin Kencang</h4>
+                                <p>Kecepatan angin dapat mencapai 20-30 knot di pesisir</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca/" target="_blank" class="card-link">Cek di BMKG <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Resmi -->
+    <section class="section news-section" id="berita">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-newspaper"></i> Berita Resmi Terbaru
+                </h2>
+                <p class="section-subtitle">Informasi terkini dari instansi pemerintah terkait kebencanaan di Jawa Barat</p>
+            </div>
+            
+            <div class="news-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="bnpb">BNPB</button>
+                    <button class="tab-button" data-tab="bpbd">BPBD Jabar</button>
+                    <button class="tab-button" data-tab="pemprov">Pemprov Jabar</button>
+                    <button class="tab-button" data-tab="bmkg">BMKG</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="bnpb">
+                        <div class="news-list" id="bnpbNews">
+                            <div class="news-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Memuat berita dari BNPB...</p>
+                            </div>
+                        </div>
+                        <div class="news-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <a href="https://bnpb.go.id/berita" target="_blank">Lihat semua berita di situs resmi BNPB</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="bpbd">
+                        <div class="news-list" id="bpbdNews">
+                            <div class="news-item">
+                                <h3 class="news-title">Berita dari BPBD Jawa Barat</h3>
+                                <p class="news-excerpt">Karena kebijakan CORS (Cross-Origin Resource Sharing), berita tidak dapat diambil langsung dari situs BPBD Jabar. Silakan kunjungi situs resmi untuk informasi terkini.</p>
+                            </div>
+                        </div>
+                        <div class="news-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <a href="https://bpbd.jabarprov.go.id/beritaterkini" target="_blank">Kunjungi situs resmi BPBD Jawa Barat</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="pemprov">
+                        <div class="news-list" id="pemprovNews">
+                            <div class="news-item">
+                                <h3 class="news-title">Berita dari Pemprov Jawa Barat</h3>
+                                <p class="news-excerpt">Karena kebijakan CORS (Cross-Origin Resource Sharing), berita tidak dapat diambil langsung dari situs Pemprov Jabar. Silakan kunjungi situs resmi untuk informasi terkini.</p>
+                            </div>
+                        </div>
+                        <div class="news-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <a href="https://www.jabarprov.go.id/berita" target="_blank">Kunjungi situs resmi Pemprov Jawa Barat</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="bmkg">
+                        <div class="news-list" id="bmkgNews">
+                            <div class="news-item">
+                                <h3 class="news-title">Peringatan Dini Cuaca dari BMKG</h3>
+                                <p class="news-excerpt">Karena kebijakan CORS (Cross-Origin Resource Sharing), peringatan dini cuaca tidak dapat diambil langsung dari situs BMKG. Silakan kunjungi situs resmi untuk informasi terkini.</p>
+                            </div>
+                        </div>
+                        <div class="news-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <a href="https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca/" target="_blank">Kunjungi halaman peringatan dini cuaca BMKG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="section emergency-section" id="kontak-darurat">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-phone-alt"></i> Kontak Darurat
+                </h2>
+                <p class="section-subtitle">Gunakan layanan ini hanya dalam kondisi darurat</p>
+            </div>
+            
+            <div class="emergency-grid">
+                <div class="emergency-card">
+                    <div class="emergency-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3 class="emergency-title">112</h3>
+                    <p class="emergency-desc">Nomor Darurat Nasional</p>
+                </div>
+                
+                <div class="emergency-card">
+                    <div class="emergency-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="emergency-title">110</h3>
+                    <p class="emergency-desc">Kepolisian RI</p>
+                </div>
+                
+                <div class="emergency-card">
+                    <div class="emergency-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <h3 class="emergency-title">113</h3>
+                    <p class="emergency-desc">Pemadam Kebakaran</p>
+                </div>
+                
+                <div class="emergency-card">
+                    <div class="emergency-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3 class="emergency-title">119</h3>
+                    <p class="emergency-desc">Layanan Kesehatan</p>
+                </div>
+                
+                <div class="emergency-card">
+                    <div class="emergency-icon">
+                        <i class="fas fa-helicopter"></i>
+                    </div>
+                    <h3 class="emergency-title">115</h3>
+                    <p class="emergency-desc">Basarnas</p>
+                </div>
+                
+                <div class="emergency-card">
+                    <div class="emergency-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="emergency-title">129</h3>
+                    <p class="emergency-desc">BNPB</p>
+                </div>
+            </div>
+            
+            <div class="emergency-note">
+                <i class="fas fa-exclamation-circle"></i>
+                <p><strong>Penting:</strong> Gunakan nomor darurat ini hanya dalam kondisi yang benar-benar membutuhkan pertolongan segera. Jangan melakukan panggilan palsu atau menguji layanan tanpa alasan yang jelas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>WebGIS<span class="logo-highlight">Kebencanaan</span>Jabar</span>
+                    </a>
+                    <p class="footer-description">Portal informasi geospasial untuk manajemen dan mitigasi bencana di Jawa Barat.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Navigasi</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="peta.html"><i class="fas fa-chevron-right"></i> Peta Kebencanaan</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-chevron-right"></i> Dashboard Analisis</a></li>
+                        <li><a href="#berita"><i class="fas fa-chevron-right"></i> Berita Resmi</a></li>
+                        <li><a href="#kontak-darurat"><i class="fas fa-chevron-right"></i> Kontak Darurat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-data">
+                    <h3 class="footer-title">Sumber Data</h3>
+                    <ul>
+                        <li><a href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=af6cc543bcc2468ea0cee2506814abf7" target="_blank"><i class="fas fa-map"></i> Peta Rawan Bencana 2D</a></li>
+                        <li><a href="https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=b522ca6443e64aaf8583e9a5f2af3eaf" target="_blank"><i class="fas fa-cube"></i> Peta Rawan Bencana 3D</a></li>
+                        <li><a href="https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml" target="_blank"><i class="fas fa-cloud-sun"></i> Data Cuaca BMKG</a></li>
+                        <li><a href="https://bnpb.go.id" target="_blank"><i class="fas fa-newspaper"></i> Berita BNPB</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <div class="beta-notice">
+                    <i class="fas fa-flask"></i>
+                    <p><strong>Beta Notice:</strong> Portal ini masih dalam pengembangan. Data dan informasi yang disajikan dapat berubah sesuai pembaruan dari sumber resmi.</p>
+                </div>
+                
+                <div class="data-statement">
+                    <i class="fas fa-database"></i>
+                    <p><strong>Pernyataan Data:</strong> Website ini menampilkan 7 layer kebencanaan yang bersumber dari instansi pemerintah terkait.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>&copy; 2023 WebGIS Kebencanaan Jawa Barat. Semua data bersumber dari instansi resmi pemerintah.</p>
+                    <p>Authors: <strong>Rifqi Gusfiliandi</strong></p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/news.js"></script>
+</body>
+</html>
